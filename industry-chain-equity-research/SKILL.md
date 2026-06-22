@@ -5,6 +5,17 @@ description: 科技与AI产业链投研标的挖掘与定量验证流程。Use w
 
 # Industry Chain Equity Research
 
+## Content Summary
+
+This skill is a research workflow for finding evidence-backed equity ideas along technology and AI industry chains. It is designed for questions such as "which A-share companies benefit from AI power architecture changes," "how to map an upstream bottleneck like HVLP copper foil," or "which AI layer has the best profit pool." It combines chain reconstruction, US/global leader benchmarking, China proxy mapping, supply-demand modeling, profit-pool analysis, and valuation comparison.
+
+Core outputs:
+
+- A chain map from the original catalyst to products, materials, equipment, suppliers, customers, and business models.
+- A US/global-first and China-second comparison of leaders, domestic substitutes, and indirect beneficiaries.
+- A longlist of researchable companies with evidence quality, not a hard-coded stock pool.
+- A quantified shortlist using demand, supply, price, margin, profit, valuation, and falsification signals.
+
 ## Overview
 
 Use this skill to turn a qualitative technology-industry chain idea into a disciplined equity research workflow. Start from the problem a chain solves, reconstruct the real product and business chain, discover companies from evidence, then force every candidate through quantitative supply-demand, profit-pool, competition, profit, and valuation checks.
