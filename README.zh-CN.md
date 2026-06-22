@@ -1,8 +1,6 @@
-# AI Industry Chain Investment Research
+# AI 产业链投研 Skill 集合
 
-中文版本：[README.zh-CN.md](README.zh-CN.md)
-
-这个仓库用于存放面向 AI 与科技产业链投研的 Codex skills。当前核心 skill 是 `industry-chain-equity-research`，用于把产业新闻、海外龙头变化、上游瓶颈或材料涨价，拆解成可验证的产业链、供应链、利润池和估值框架。
+本仓库用于存放面向 AI 与科技产业链投研的 Codex skills。当前核心 skill 是 `industry-chain-equity-research`，用于把产业新闻、海外龙头变化、上游瓶颈或材料涨价，拆解成可验证的产业链、供应链、利润池和估值框架。
 
 ## 当前 Skill
 
@@ -16,24 +14,6 @@
 - HVLP 铜箔、电子布、覆铜板、先进封装材料等上游瓶颈如何映射到 A 股公司。
 - 一条产业新闻应该选择系统厂、零部件、材料、设备，还是应用层。
 - AI 产业链中哪些层级最赚钱，哪些层级最容易被卷。
-
-入口文件：
-
-```text
-industry-chain-equity-research/SKILL.md
-```
-
-详细说明：
-
-```text
-industry-chain-equity-research/README.md
-```
-
-研究模板：
-
-```text
-industry-chain-equity-research/references/research-output-template.md
-```
 
 ## 核心框架
 
@@ -97,6 +77,12 @@ industry-chain-equity-research/
   references/
     research-output-template.md
 ```
+
+## 相关文件
+
+- Skill 入口：[industry-chain-equity-research/SKILL.md](industry-chain-equity-research/SKILL.md)
+- Skill 说明：[industry-chain-equity-research/README.md](industry-chain-equity-research/README.md)
+- 研究模板：[industry-chain-equity-research/references/research-output-template.md](industry-chain-equity-research/references/research-output-template.md)
 
 ## 免责声明
 
