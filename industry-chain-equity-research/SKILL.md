@@ -124,6 +124,7 @@ Use a search-and-evidence loop:
 - Use annual reports, IPO prospectuses, investor Q&A, exchange announcements, patents, customer certification notes, industry association data, price trackers, import/export data, and credible industry reports.
 - Build a longlist by chain node: global leaders, domestic listed companies, private companies, upstream suppliers, equipment/material bottlenecks, and indirect beneficiaries.
 - For each company, record evidence quality: direct supplier disclosure, customer certification, capacity announcement, product page only, or market rumor.
+- For every listed company, include 股票代码/交易所 in the first mention and in every candidate table, such as `300750.SZ 宁德时代`, `688012.SH 中微公司`, `NVDA.O Nvidia`, or `ASML.AS ASML`. For private or unlisted companies, explicitly write `未上市/私有`; do not leave the code blank.
 - Keep private or overseas companies in the map if they explain capacity, price, or substitution pressure, even if they are not directly investable.
 - For AI cases, explicitly record whether the company belongs to infrastructure capex, cloud revenue, model API revenue, or application monetization. These are different investment questions.
 
@@ -145,7 +146,7 @@ Prefer exact formulas with cited source numbers. If data is missing, state the a
 
 Use the template in `references/research-output-template.md`. The final comparison must include:
 
-- Candidate company or target direction.
+- Candidate company or target direction, with 股票代码/交易所 for each listed target.
 - Chain role and expansion route.
 - Evidence that connects the company to the chain node.
 - Layer profit-pool judgment and competition intensity.
@@ -163,6 +164,7 @@ Rank by measurable upside/downside, not by narrative excitement. Highlight the l
 - Use recent filings, exchange announcements, investor relations materials, industry association data, price trackers, customs data, channel checks, or credible sell-side/industry reports when available.
 - For live market data, verify with current sources before citing prices, market caps, or valuation percentiles.
 - Distinguish China-listed companies, overseas leaders, private suppliers, products, materials, and broad themes.
+- Every public-company target must carry a stock code. If the exchange suffix is uncertain, verify it before finalizing; if still uncertain, mark `代码待核验` rather than omitting the code.
 - Never present a company as investable only because it is mentioned in a chain. Require exposure, capacity, margin, valuation, and timing evidence.
 - Avoid hard-coded stock pools. The candidate set is incomplete until the chain map, supplier map, and capacity map have been searched.
 - Do not freeze current numeric examples into the skill. When citing capex, revenue growth, margins, HBM price, CoWoS capacity, or API pricing, verify with current filings and dated sources.
