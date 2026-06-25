@@ -1,4 +1,4 @@
 interface:
   display_name: "产业链投研标的挖掘"
-  short_description: "按AI产业链八层框架挖掘标的并验证利润池与竞争强度"
-  default_prompt: "Use $industry-chain-equity-research to map the AI industry chain, find evidence-backed candidates, and compare profit pools, competition, and valuation."
+  short_description: "按AI产业链框架挖掘标的，支持DeepSeek分析公告财报并生成HTML报告"
+  default_prompt: "Use $industry-chain-equity-research to analyze filings or map an AI industry chain, find evidence-backed candidates, and compare profit pools, competition, valuation, and falsification signals."

@@ -1,6 +1,6 @@
 ---
 name: industry-chain-equity-research
-description: 科技与AI产业链投研标的挖掘与定量验证流程。Use when Codex needs to research AI产业链、AI服务器、GPU/ASIC、HBM、CoWoS/先进封装、半导体设备材料、云平台、模型API、Agent/SaaS、PCB、光模块、MLCC/被动元件、功率半导体等链条，按美国为主中国为辅的全球产业链框架，先从问题、BOM、拓扑、供应商、客户认证、产能瓶颈、价格传导和商业化收入中挖掘候选公司，再建立供需缺口、利润池、竞争强度、利润弹性、三年情景预测和估值比较。
+description: 科技与AI产业链投研标的挖掘与定量验证流程。Use when Codex needs to research AI产业链、AI服务器、GPU/ASIC、HBM、CoWoS/先进封装、半导体设备材料、云平台、模型API、Agent/SaaS、PCB、光模块、MLCC/被动元件、功率半导体等链条；or when the user asks to analyze公告、财报、招股书、SEC filings with DeepSeek and save a source-backed HTML research report. The workflow maps product chains, suppliers, customer certification, capacity bottlenecks, price transmission, profit pools, competition, three-year scenarios, valuation, and falsification signals.
 ---
 
 # Industry Chain Equity Research
@@ -182,3 +182,29 @@ When validating this skill on a historical case, success means:
 ## Bundled Resources
 
 - `references/research-output-template.md`: A concise research-note template for chain maps, candidate tables, supply-demand models, profit sensitivity, valuation comparison, and falsification checks.
+- `scripts/deepseek_filings_analyzer.py`: Analyze公告、年报、招股书、SEC filing 等文本/PDF with DeepSeek and emit `analysis.md`, `metadata.json`, and `index.html` into a report folder. Use it when the task asks to analyze filings,公告 or财报文本, or when report traceability matters.
+
+## DeepSeek Filing Analysis Workflow
+
+Use this workflow when the user asks to analyze公告、财报、招股书、SEC filing, or explicitly asks to call DeepSeek for filing text analysis.
+
+1. Collect source files first:公告 PDF、年报 PDF、招股书、SEC HTML、交易所公告文本、company filings. Prefer official exchange/SEC/company URLs. Do not rely only on news snippets.
+2. Save sources under a task-local working folder such as `.tmp_<topic>/` or another user-approved folder. Do not delete batches of files without user permission.
+3. Set the API key only in the shell environment for the current command. Never write API keys into `SKILL.md`, scripts, reports, metadata, prompts, logs, or examples.
+4. Run the analyzer script with an explicit topic, inputs, and output folder:
+
+```powershell
+$env:DEEPSEEK_API_KEY = '<provided at runtime>'
+python industry-chain-equity-research/scripts/deepseek_filings_analyzer.py `
+  --topic "磷化铟国内扩产对设备链的拉动，剔除云南锗业" `
+  --input .tmp_inp_research/xingye_inp_20260622.pdf .tmp_inp_research/amec_2025_ar.pdf `
+  --output-dir reports/inp_expansion_equipment_YYYY-MM-DD `
+  --title "磷化铟扩产设备链公告财报分析"
+```
+
+5. Read the generated `analysis.md`; correct model mistakes before finalizing. Common corrections include:
+   - Do not treat未披露客户、设备商、设备数量、产能规模 as known facts.
+   - Do not equate adjacent material systems, such as AsP/red LED, with InP optical-communication epitaxy unless the filing says so.
+   - Separate衬底制造设备 from外延/芯片制造设备.
+   - Mark speculative supplier beneficiaries as“待验证” rather than conclusions.
+6. Final reports must be saved in their own folder as HTML, usually `reports/<topic>_<YYYY-MM-DD>/index.html`. Include source links or local source names, evidence strength, assumptions, risks, and falsification signals.
